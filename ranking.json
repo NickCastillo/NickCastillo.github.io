@@ -1,0 +1,478 @@
+[
+  {
+    "name": "JavaScript",
+    "id": "javascript",
+    "rankings": [
+      {
+        "year": 2015,
+        "rank": 1
+      },
+      {
+        "year": 2016,
+        "rank": 1
+      },
+      {
+        "year": 2017,
+        "rank": 1
+      },
+      {
+        "year": 2018,
+        "rank": 1
+      },
+      {
+        "year": 2019,
+        "rank": 1
+      },
+      {
+        "year": 2020,
+        "rank": 1
+      },
+      {
+        "year": 2021,
+        "rank": 1
+      }
+    ]
+  },
+  {
+    "name": "HTML/CSS",
+    "id": "html-css",
+    "rankings": [
+      {
+        "year": 2015,
+        "rank": 11
+      },
+      {
+        "year": 2016,
+        "rank": 11
+      },
+      {
+        "year": 2017,
+        "rank": 11
+      },
+      {
+        "year": 2018,
+        "rank": 2
+      },
+      {
+        "year": 2019,
+        "rank": 2
+      },
+      {
+        "year": 2020,
+        "rank": 2
+      },
+      {
+        "year": 2021,
+        "rank": 2
+      }
+    ]
+  },
+  {
+    "name": "Python",
+    "id": "python",
+    "rankings": [
+      {
+        "year": 2015,
+        "rank": 6
+      },
+      {
+        "year": 2016,
+        "rank": 6
+      },
+      {
+        "year": 2017,
+        "rank": 5
+      },
+      {
+        "year": 2018,
+        "rank": 6
+      },
+      {
+        "year": 2019,
+        "rank": 4
+      },
+      {
+        "year": 2020,
+        "rank": 4
+      },
+      {
+        "year": 2021,
+        "rank": 3
+      }
+    ]
+  },
+  {
+    "name": "SQL",
+    "id": "sql",
+    "rankings": [
+      {
+        "year": 2015,
+        "rank": 2
+      },
+      {
+        "year": 2016,
+        "rank": 2
+      },
+      {
+        "year": 2017,
+        "rank": 2
+      },
+      {
+        "year": 2018,
+        "rank": 3
+      },
+      {
+        "year": 2019,
+        "rank": 3
+      },
+      {
+        "year": 2020,
+        "rank": 3
+      },
+      {
+        "year": 2021,
+        "rank": 4
+      }
+    ]
+  },
+  {
+    "name": "Java",
+    "id": "java",
+    "rankings": [
+      {
+        "year": 2015,
+        "rank": 3
+      },
+      {
+        "year": 2016,
+        "rank": 3
+      },
+      {
+        "year": 2017,
+        "rank": 3
+      },
+      {
+        "year": 2018,
+        "rank": 4
+      },
+      {
+        "year": 2019,
+        "rank": 5
+      },
+      {
+        "year": 2020,
+        "rank": 5
+      },
+      {
+        "year": 2021,
+        "rank": 5
+      }
+    ]
+  },
+  {
+    "name": "Node.js",
+    "id": "nodejs",
+    "rankings": [
+      {
+        "year": 2015,
+        "rank": 9
+      },
+      {
+        "year": 2016,
+        "rank": 9
+      },
+      {
+        "year": 2017,
+        "rank": 11
+      },
+      {
+        "year": 2018,
+        "rank": 11
+      },
+      {
+        "year": 2019,
+        "rank": 11
+      },
+      {
+        "year": 2020,
+        "rank": 11
+      },
+      {
+        "year": 2021,
+        "rank": 6
+      }
+    ]
+  },
+  {
+    "name": "Typescript",
+    "id": "typescript",
+    "rankings": [
+      {
+        "year": 2015,
+        "rank": 11
+      },
+      {
+        "year": 2016,
+        "rank": 11
+      },
+      {
+        "year": 2017,
+        "rank": 9
+      },
+      {
+        "year": 2018,
+        "rank": 11
+      },
+      {
+        "year": 2019,
+        "rank": 10
+      },
+      {
+        "year": 2020,
+        "rank": 9
+      },
+      {
+        "year": 2021,
+        "rank": 7
+      }
+    ]
+  },
+  {
+    "name": "C#",
+    "id": "csharp",
+    "rankings": [
+      {
+        "year": 2015,
+        "rank": 4
+      },
+      {
+        "year": 2016,
+        "rank": 4
+      },
+      {
+        "year": 2017,
+        "rank": 4
+      },
+      {
+        "year": 2018,
+        "rank": 7
+      },
+      {
+        "year": 2019,
+        "rank": 7
+      },
+      {
+        "year": 2020,
+        "rank": 7
+      },
+      {
+        "year": 2021,
+        "rank": 8
+      }
+    ]
+  },
+  {
+    "name": "Bash/Shell",
+    "id": "bash-shell",
+    "rankings": [
+      {
+        "year": 2015,
+        "rank": 11
+      },
+      {
+        "year": 2016,
+        "rank": 11
+      },
+      {
+        "year": 2017,
+        "rank": 11
+      },
+      {
+        "year": 2018,
+        "rank": 5
+      },
+      {
+        "year": 2019,
+        "rank": 6
+      },
+      {
+        "year": 2020,
+        "rank": 6
+      },
+      {
+        "year": 2021,
+        "rank": 9
+      }
+    ]
+  },
+  {
+    "name": "C++",
+    "id": "cplusplus",
+    "rankings": [
+      {
+        "year": 2015,
+        "rank": 7
+      },
+      {
+        "year": 2016,
+        "rank": 7
+      },
+      {
+        "year": 2017,
+        "rank": 7
+      },
+      {
+        "year": 2018,
+        "rank": 9
+      },
+      {
+        "year": 2019,
+        "rank": 9
+      },
+      {
+        "year": 2020,
+        "rank": 10
+      },
+      {
+        "year": 2021,
+        "rank": 10
+      }
+    ]
+  },
+  {
+    "name": "PHP",
+    "id": "php",
+    "rankings": [
+      {
+        "year": 2015,
+        "rank": 5
+      },
+      {
+        "year": 2016,
+        "rank": 5
+      },
+      {
+        "year": 2017,
+        "rank": 6
+      },
+      {
+        "year": 2018,
+        "rank": 8
+      },
+      {
+        "year": 2019,
+        "rank": 8
+      },
+      {
+        "year": 2020,
+        "rank": 8
+      },
+      {
+        "year": 2021,
+        "rank": 11
+      }
+    ]
+  },
+  {
+    "name": "C",
+    "id": "c",
+    "rankings": [
+      {
+        "year": 2015,
+        "rank": 8
+      },
+      {
+        "year": 2016,
+        "rank": 10
+      },
+      {
+        "year": 2017,
+        "rank": 8
+      },
+      {
+        "year": 2018,
+        "rank": 10
+      },
+      {
+        "year": 2019,
+        "rank": 11
+      },
+      {
+        "year": 2020,
+        "rank": 11
+      },
+      {
+        "year": 2021,
+        "rank": 11
+      }
+    ]
+  },
+  {
+    "name": "Ruby",
+    "id": "ruby",
+    "rankings": [
+      {
+        "year": 2015,
+        "rank": 11
+      },
+      {
+        "year": 2016,
+        "rank": 11
+      },
+      {
+        "year": 2017,
+        "rank": 10
+      },
+      {
+        "year": 2018,
+        "rank": 11
+      },
+      {
+        "year": 2019,
+        "rank": 11
+      },
+      {
+        "year": 2020,
+        "rank": 11
+      },
+      {
+        "year": 2021,
+        "rank": 11
+      }
+    ]
+  },
+  {
+    "name": "Angular",
+    "id": "angular",
+    "rankings": [
+      {
+        "year": 2015,
+        "rank": 10
+      },
+      {
+        "year": 2016,
+        "rank": 8
+      },
+      {
+        "year": 2017,
+        "rank": 11
+      },
+      {
+        "year": 2018,
+        "rank": 11
+      },
+      {
+        "year": 2019,
+        "rank": 11
+      },
+      {
+        "year": 2020,
+        "rank": 11
+      },
+      {
+        "year": 2021,
+        "rank": 11
+      }
+    ]
+  }
+]

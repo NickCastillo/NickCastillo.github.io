@@ -1,0 +1,335 @@
+@font-face {
+  font-family: "shipporiantique-regular";
+  src: url("./ShipporiAntique-Regular.ttf");
+}
+
+body {
+  background-color: #343434;
+  font-family: "shipporiantique-regular";
+}
+.title {
+  color: #fff;
+  font-size: 2.5em;
+  font-weight: 300;
+  margin-bottom: 0px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+.subtitle {
+  color: #f9c74f;
+  font-size: 1.5em;
+  margin: 10px;
+}
+.name {
+  color: #fff;
+  font-size: 0.8em;
+}
+.introduction {
+  color: #fff;
+  font-size: 1em;
+  margin: 0px 50px 60px 50px;
+  text-align: center;
+}
+.introduction .stackoverflow {
+  color: #ffa434;
+}
+
+li {
+  color: #fff;
+  margin: 5px 0px 5px 0px;
+}
+.flex-container {
+  display: flex;
+  flex-direction: column;
+}
+.container-top {
+  display: flex;
+  flex-direction: row;
+  background-color: #343434;
+  margin-bottom: 50px;
+}
+.info-chart-top {
+  width: 800px;
+  margin-right: 50px;
+  margin-left: 30px;
+}
+.info-chart-top p {
+  word-wrap: break-word;
+  color: white;
+}
+
+.info-chart-top .bumpchart {
+  font-style: italic;
+  color: #f94144;
+}
+.italic {
+  font-style: italic;
+}
+.bold {
+  font-weight: bold;
+}
+.bold-italic {
+  font-weight: bold;
+  font-style: italic;
+}
+.info-chart-bottom .netgraph {
+  font-style: italic;
+  color: #00b4d8;
+}
+
+.subcontainer-top {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: #343434;
+  flex-basis: 100%;
+}
+
+.chart-leyend-container {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-auto-rows: minmax(auto, auto);
+  column-gap: 20px;
+  row-gap: 10px;
+  margin: 20px;
+}
+.chart-leyend-item {
+  border-radius: 10px;
+  border-color: white;
+  border-width: 0px;
+  border-style: solid;
+  width: auto;
+  padding: 5px 10px 5px 10px;
+  color: white;
+  flex-direction: row;
+  display: flex;
+}
+.circle-leyend {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  justify-content: center;
+  margin-top: 1.5px;
+  margin-right: 10px;
+}
+.btn-show-all {
+  width: auto;
+  padding: 5px 10px 5px 10px;
+  color: white;
+  flex-direction: row;
+  display: flex;
+}
+.container-bottom {
+  display: flex;
+  flex-direction: row;
+  background-color: #343434;
+  margin-top: 40px;
+}
+.subcontainer-bottom {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: #343434;
+  flex-basis: 100%;
+  padding-left: 0px;
+  table-layout: fixed;
+}
+.info-chart-bottom {
+  width: 700px;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+.info-chart-bottom p {
+  word-wrap: break-word;
+  color: white;
+}
+
+.net-leyend-container {
+  display: flex;
+  flex-direction: row;
+  display: row;
+  justify-content: center;
+  margin-right: 30px;
+  margin: 10px;
+}
+.leyend-title {
+  font-size: 20px;
+  color: white;
+  text-align: left;
+  padding-top: 10px;
+  font-family: "shipporiantique-regular";
+}
+
+.leyendItem {
+  background-color: silver;
+  padding: 25px;
+  font-family: "shipporiantique-regular";
+}
+
+.y-axis {
+  stroke-width: 2;
+  color: white;
+}
+
+.x-axis {
+  color: white;
+  stroke-width: 2;
+}
+
+g .tick text {
+  font-size: 15px;
+  font-family: "shipporiantique-regular";
+}
+
+a:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.btn-show {
+  padding: 5px 30px 5px 30px;
+  margin: 0px 0px 40px 100px;
+  color: rgb(0, 0, 0);
+  flex-direction: row;
+  display: flex;
+  border-radius: 5px;
+  font-size: 1.2em;
+  font-family: "shipporiantique-regular";
+}
+
+.btn-show:hover {
+  background-color: #06d6a0;
+  color: black;
+}
+
+.container-informe {
+  color: black;
+  background-color: rgb(240, 240, 240);
+  padding: 50px 150px 50px 150px;
+  margin: 0px 80px 0px 80px;
+  font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: justify;
+  display: none;
+}
+
+.message {
+  background-color: rgb(237, 119, 119);
+  padding: 8px;
+  border-radius: 10px;
+  margin: 0px 50px 0px 50px;
+}
+.container-informe h1 {
+  font-family: "shipporiantique-regular";
+  margin-top: 50px;
+}
+
+.container-informe h2 {
+  font-family: "shipporiantique-regular";
+  margin-bottom: 10px;
+}
+
+.container-informe h3 {
+  font-family: "shipporiantique-regular";
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+.tarea {
+  padding: 0px 60px 0px 60px;
+}
+
+.red {
+  color: rgb(244, 81, 81);
+  font-weight: 700;
+}
+
+.descripcion {
+  display: grid;
+  grid-template-columns: auto auto 200px;
+  column-gap: 10px;
+  row-gap: 15px;
+}
+
+.descripcion p {
+  margin: 0;
+}
+
+.header {
+  font-weight: bold;
+}
+
+.tarea,
+.header {
+  padding: 5px 10px;
+  background-color: #c5c5c556;
+  border-left: 5px solid #06d6a0;
+}
+
+.grupo {
+  padding: 0px 15px;
+  border-left: 5px solid #06d6a0;
+  margin-bottom: 50px;
+}
+
+.dataset_type {
+  color: #06d6a0;
+  font-weight: bold;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+  margin: 10px;
+  padding: 15px;
+  background-color: #06d6a0;
+}
+
+.column2 {
+  flex: 30%;
+  margin: 10px;
+  padding: 15px;
+}
+
+.container-informe li {
+  color: black;
+}
+
+.container-3 {
+  flex: 1;
+  background-color: #06d6a0;
+  padding: 5px 10px 10px 10px;
+  margin-bottom: 10px;
+}
+
+.container-4 {
+  flex: 1;
+  background-color: #eeeb6a;
+  padding: 5px 10px 10px 10px;
+  margin-bottom: 10px;
+}
+
+.container-5 {
+  flex: 1;
+  padding: 5px 10px 10px 10px;
+  margin-bottom: 10px;
+}
+
+.container-tarea {
+  flex: 1;
+  background-color: #dfdfdf;
+  padding: 10px 10px 10px 10px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}

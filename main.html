@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <title>Examen Nicolás Castillo</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+    </head>
+
+    <body> 
+        
+        <div class='container'> 
+
+            <div>
+                <h1 class="title"> 👨🏽‍💻 Tendencias y relaciones en tecnologías de Programación</h1>
+            </div>
+
+            <p class="introduction"> 
+                La biblia, tambien conocida como <span class="stackoverflow">StackOverflow</span>, realiza una encuesta anual
+                en donde le preguntan a sus usuarios sobre sus experiencias con las tecnologías de programación. 
+                Estas preguntas tienen que ver, por ejemplo, con las tecnologías que aman, odia, les interesan, o que estan usando actualmente.
+            </p>
+
+            <div class="flex-container"> 
+                
+                <div class='container-top'> 
+
+                    <div class="info-chart-top"> 
+                        <h2 class="subtitle">Acerca del grafico de la derecha... 👀 </h2> 
+                        <br>
+                        <p> 
+                            A la derecha se puede ver un <span class="bumpchart">bump chart</span> que enseña un ranking (top 10) 
+                            de los lenguajes de programación más usados por los usuarios de StackOverflow durante los ultimos 6 años.
+
+                            <br>
+
+                            <li> 
+                                Coloca el cursor sobre una de las lineas para hacerle enfasis a esta.
+                            </li>
+                            <br>
+                            <li>
+                                Selecciona/deselecciona lineas apretando los nombres correspondientes en las leyendas.
+                            </li>
+                            <br>
+                            <li>
+                                "Mostrar todos" devolverá todas las lineas a la visualización.
+                            </li>
+                            <br>
+                            <li>
+                                Ojo! Las herramientas seleccionadas en el ranking tambien afectaran los nodos correspondientes en la red de abajo!
+                            </li>
+
+                        </p>
+
+                    
+                    </div>
+
+                    <div class="subcontainer-top"> 
+
+                        <div class="chart-container" ></div> 
+                    
+                        <div class="chart-leyend-container">
+                            <div class="btn-show-all"> Mostrar todos</div>
+                        </div>
+
+                    </div>
+                    
+                </div>
+                
+                <div class="container-bottom">
+                    
+                    <div class='subcontainer-bottom'>
+                        
+                        <div class='net-leyend-container' id='net-leyend-container'>
+                                <div class="leyendItem" id="leyend-language" > Lenguaje </div>
+                                <div class="leyendItem" id="leyend-framework"> Framework </div>
+                                <div class="leyendItem" id="leyend-platform"> Plataforma </div>
+                                <div class="leyendItem" id="leyend-database"> Bases de datos </div>
+                                <div class="leyendItem" id="leyend-showall"> Mostrar todos </div>
+                        </div>
+                        
+                        <div class="netgraph-container"> </div>
+                    </div>
+                    
+                    <div class="info-chart-bottom"> 
+                        <h2 class="subtitle">Acerca de la red ... 🤔 </h2> 
+                        
+                        <p> 
+                            A la izquierda tenemos una <span class="netgraph"> red de nodos</span> que codifican las relaciones 
+                            entre distintas tecnologías de programación. Tambien se pueden ver si estas tecnologías corresponden a 
+                            un lenguaje de programación, un <span class="italic"> framework </span>, una plataforma o base de datos.
+
+                            <br>
+
+                            <li> 
+                                Los nodos correspondientes a las tecnologías seleccionadas en el grafico de arriba se encuentran con su nombre
+                                pintado con el color respectivo.
+                            </li>
+                            <br>
+                            <li>
+                                Puedes presionar un nodo para filtrar el grupo.
+                            </li>
+                            <br>
+                            <li>
+                                Al presionar "Mostrar todos", la red volvera a su estado inicial.
+                            </li>
+                            <br>
+                            <li>
+                                Al colocar el cursos sobre un item en la leyenda, los nodos correspondientes al item se haran más grandes.
+                            </li>
+                            <br>
+                            <li>
+                                Al ubicar el cursos sobre un nodo, todos los nodos relacionados de forma directa o indirecta a este se hacen más grandes y los enlaces se vuelven más claros.
+                            </li>
+                            <br> 
+                        </p>
+                        <p> 
+                            Por ultimo, si filtras un grupo de nodos aún podras ver los otros por si solos al colocar el cursos sobre los items en la leyenda.
+                            Ademas, puedes armar los enlaces colocando el cursor sobre estos nodos llegando así a una visualización distinta!
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <script> 
+            firstClickToggle = true;
+            
+            function showInforme() {
+                var informe = document.getElementById("container-informe");
+                var btn = document.getElementById("btn-show");
+                
+                if (informe.style.display === "none" || firstClickToggle) {
+                    firstClickToggle = false;
+                    informe.style.display = "block";
+                    btn.innerHTML = "📂 Esconder informe"
+                } else {
+                    informe.style.display = "none"
+                    btn.innerHTML = "📁 Mostrar informe"
+                }
+            }
+        </script>
+
+        <button class="btn-show" id="btn-show" onclick="showInforme()">📁 Mostrar Informe</button>
+        
+        <div class="container-informe" id='container-informe'>
+            
+            <h1 style="font-size: 45px">Informe</h1>
+
+            <h1>Primer nivel: Caracterización de dominio 🧩</h1>
+            <div> 
+                <h2>Contexto: 🤔</h2>
+                <p> 
+                    StackOverflow es una pagina web de preguntas y respuestas para programadores profesionales, 
+                    estudiantes y entusiastas. Esta realiza encuestas anuales dirigidas a sus usuarios las cuales 
+                    contienen preguntas de diversos topicos, desde la cantidad de dinero que reciben los desarrolladores 
+                    con las distintas tecnologías, cuales aman, cuales odia, con cuales les gustaría trabajar en el 
+                    futuro, etc. 
+                </p>
+               
+                <p>
+                    Cabe destacar como <span style="font-weight: bold;">StackOverflow cuenta con más de 14 millones de usuarios registrados </span> y más de 21 millones de preguntas y 31 millones de respuestas 
+                    por lo que sus encuestas no deberian tomarse tan a la ligera y pueden, en muchos casos, representar correctamente
+                    tendencias mundiales.
+                </p>
+                <p class="message">
+                    🙋🏽‍♂️ Con "tecnologías" nos referimos a lenguajes de programación, frameworks o plataformas de desarrollo 
+                    y bases de datos. 
+                </p>
+            </div>
+
+            <h2> Un poco sobre los datos...</h2>
+            <p>
+                Cada año liberan también los resultados de estas encuestas (Pueden encontrar la encuesta del 2021<a class="link" href="https://insights.stackoverflow.com/survey/2021"> aquí</a>). 
+                La visualización se apoya en dos resultados (y dos archivos JSON) especificos de estas: 
+            </p>
+            <div class="row"> 
+                <p class="column">  
+                    Una de las preguntas que se repite a lo largo de los años tiene que ver con las 
+                    tecnologías (o lenguajes) que los desarrolladores han tenido que usar durante el ultimo año. StackOverflow luego 
+                    libera los resultados en base al porcentaje de usuarios que seleccionaron la teconologia.
+                    <br><br>
+                    Obtuve, a mano, los valores porcentuales para cada uno de los lenguajes en cada año y les asigne un <span class="italic">rank </span> acada uno. 
+                    Esta información quedó en el archivo <span style="font-weight: bold;">ranking.json </span>
+                </p>
+
+                <p class="column">
+                    Durante la encuesta del 2020, StackOverflow también liberó una <a class="link" href="https://insights.stackoverflow.com/survey/2020#correlated-technologies"> una red de nodos</a> representando las correlaciónes 
+                    entre distintas tecnologías gracias a las respuestas de los usuarios. <br><br>No fue posible obtener un archivo
+                    con esta información por lo que, nuevamente, arme un archivo a mano. Esta vez se obtuvó la información de cada nodo 
+                    (nombre y id) y enlace (target y source) de la visualización original con tal de poder recreaarla. El archivo 
+                    quedó con el nombre  <span style="font-weight: bold;">relations.json </span>
+                </p>
+            </div>
+            
+            <h2> Usuarios objetivos:</h2>
+            <p>
+                Con respecto a los potenciales usuarios objetivos, se espera que esta herramienta sea usada principalmente por
+                (1) estudiantes de carreras relacionadas con la programación, (2) programadores entusiastas, (3) 
+                personas que quieran aprender a programar y (4) programadores profesionales. De todas formas, igual podemos abarcar 
+                a más personas especificando a (5) cualquier personas con conocimientos minimos de programación e interés por 
+                aprender sobre las tendencias de tecnologías de programación y las relaciones entre ellas.
+                <br><br>
+                Personas con poca o nada de experiencia programando pueden apoyarse en la visualización para decirse en un lenguaje
+                o una tecnología que aprender (quizas en base tambien a lo poco que ya saben). Personas con más experiencia pueden 
+                recurrir a la visualización para informarce sobre las tendencias actuales.
+            </p>
+
+            <h1>Segundo nivel: Abstracción de datos y tareas 🎯</h1>
+
+            <h2>📎 Abstraccion de tareas:</h2>
+            <div>
+                <p class="tarea"> Tarea 1: <span class="red">Resumir</span> los lenguajes más populares de cada año según las encuestas de StackOverflow.</p>
+                <p>
+                    Esta tarea cae en la categoria de <span class="bold">consulta</span> y especficiamente en <span class="bold">resumir</span> pues cuenta con una gran cantidad de elementos.
+                    Gracias a la visualización, el usuarió tendrá a su disposición el ranking de todos los lenguajes para cada año y podra sacar conclusiones de manera rapida frente a esto. <br><br>
+                    Cabe destacar como la capacidad de realizar filtros o hacer enfasis sobre solo un elemento tambien permite <span class="italic">sub-tareas</span>
+                    de consulta como Identificar y Comparar los <span class="italic">rankings</span> entre lenguajes.
+                </p>
+            </div>
+
+            <div>
+                <p class="tarea"> Tarea 2: <span class="red">Identificar</span> las relaciones comunes entre las distintas tecnologías de programación. </p> 
+                <p>
+                    El usuario podrá conocer que tecnología en particular (y de que tipo) suele relacionarse con otras. Esto le permitira encontrar 
+                    posibles tecnologías que pueden ser de su interés en base a los conocimientos que ya tiene o cuales pueden "valer más la pena" aprender
+                    pues permitira abrir más oportunidades en un futuro.
+                </p>
+            </div>
+
+            <div>
+                <p class="tarea"> Tarea 3: <span class="red">Descubrir</span> posibles correlaciones entre el ranking de un lenguaje y sus relaciones con otras tecnologías.</p>
+                <p>
+                    Enfocandonos en la categoría de <span class="bold">analizar</span>, el usuario podra entender si esque los buenos rankings de algunos lenguajes 
+                    se deben a la capacidad de este para trabajar con otras tecnologías. Ademas, invita al usuario a investigar más cuenta pues puede, por ejemplo, notar
+                    como Ruby en un momento entra al ranking a pesar de solo relacionarse con el framework Ruby On Rails, entonces ¿Por qué es tan importante Ruby on Rails? 
+                    y ¿Que alcances tiene?
+                </p>
+            </div>
+
+            
+            <h2>🗃️ Abstraccion de datos:</h2>
+            
+            <h3>Datos Singulares:</h3><br>
+
+            Con respecto a los datos singulares, contamos con: 
+            <ul>
+                <li>
+                    <span class="bold">Lenguajes de programación</span> (item): Corresponde a cada elemento de la lista encontrada en el dataset ranking.json
+                </li>
+                <li>
+                    <span class="bold">Herramientas de programación</span> (item): Corresponde a cada nodo encontrado en el diccionario "nodos" del dataset relations.json. 
+                </li>
+                <li>
+                    <span class="bold">Relación entre herramientas</span> (enlace): Codifican una relación no dirigida entre dos nodos (herramientas). Corresponde a cada linea encontrada en el diccionario "enlaces" del dataset relations.json. Cod
+                </li>
+            </ul>
+            
+            A pesar de como los atributos corresponden a datos singulares, son muchos por lo que los presentamos por separado.<br><br>
+
+            <p class="message">
+                🙋🏽‍♂️ Es necesario destacar como rankings, nodos, y enlaces son diccionarios que, a pesar de no ser un atributo en sí, se incluyen en las tablas 
+                a continuación para facilitar el entendimiento pues <span class="bold"> contienen atributos</span>.
+            </p>
+
+            <h3>Atributos: </h3><br>
+
+            <h4 style="margin: 0px 0px 0px 0px">ranking.json</h4>
+            <p style="margin: 0px 0px 20px 0px">Tipo de dataset: <span class="dataset_type">Datos tabulares</span></p>
+            <!-- La tabla fue rescatada del informe de Daniela Concha (2020) -->
+            <div class="descripcion">
+                <p class="header">Nombre</p>
+                <p class="header">Descripción</p>
+                <p class="header">Abstracción</p>
+        
+                <p>id</p>
+                <p>Identificador único del lenguaje. <br>Corresponde a los nombres de los lenguajes pero en un formato "limpio" evitando el uso de simbolos. Por ejemplo, el id de C# es csharp</p>
+                <p>Categorico, llave</p>
+        
+                <p>name</p>
+                <p>Nombre del lenguaje</p>
+                <p>Categorico, llave</p>
+        
+                <p>rankings</p>
+                <p>Lista de diccionarios donde cada uno contiene los atributos yaer y rank</p>
+                <p>NA</p>
+        
+                <p>year</p>
+                <p>Corresponde al año en el que se obtuvo el ranking</p>
+                <p>Ordenado, cuantitativo, secuencial, no cíclico, valor</p>
+        
+                <p>rank</p>
+                <p>Entrega el ranking obtenido en la encuesta del año correspondiente. Estos valores van de 1 a 11 (se asigna el valor 11 cuando el lenguaje se encuentra fuera del top 10)</p>
+                <p>
+                    Ordenado, ordinal, secuencial, no cíclico, valor
+                </p>
+            </div>
+
+            <h4 style="margin: 30px 0px 0px 0px">relations.json</h4>
+            <p style="margin: 0px 0px 20px 0px">Tipo de dataset: <span class="dataset_type">Red </span></p>
+            <div class="descripcion">
+                <p class="header">Nombre</p>
+                <p class="header">Descripción</p>
+                <p class="header">Abstracción</p>
+        
+                <p>nodos</p>
+                <p>Lista de diccionarios <br>
+                    Cada diccionario contiene los atributos de un nodo de la red (id, name, type, group)
+                </p>
+                <p>NA</p>
+        
+                <p>id</p>
+                <p>Identificador único del nodo </p>
+                <p>Categorico, llave</p>
+        
+                <p>name</p>
+                <p>Nombre de la herramienta representada por el nodo</p>
+                <p>Categorico, llave</p>
+        
+                <p>type</p>
+                <p>Valor numerico que representa el tipo de herramienta que es el nodo</p>
+                <p>Categorico, valor</p>
+        
+                <p>group</p>
+                <p>Grupo al que pertenece el nodo. <br>
+                    Dado que existen multiples redes independientes, con grupo nos referimos a una de estas redes. </p>
+                <p>Categorico, valor</p>
+
+                <p>enlaces</p>
+                <p>Lista de diccionarios <br>
+                    Cada diccionario contiene los atributos source y target que corresponden a los nodos origen y destino respectivamente. 
+                    Ademas de name y id.   
+                </p>
+                <p>NA</p>
+        
+                <p>id</p>
+                <p>Identificador único del enlace </p>
+                <p>Categorico, llave</p>
+        
+                <p>source</p>
+                <p>Nombre del nodo origen del enlace</p>
+                <p>Categorico, valor</p>
+        
+                <p>target</p>
+                <p>Nombre del nodo destino del enlace</p>
+                <p>Categorico, valor</p>
+        
+                <p>group</p>
+                <p>Grupo al que pertenece el enlace. </p>
+                <p>Categorico, valor</p>
+            </div>
+            <br>
+
+            <h1>Tercer nivel: Codificación visual y de interacción 📊</h1>
+
+            <h3>Tarea 1: Resumir los lenguajes más populares de cada año según las encuestas de StackOverflow.</h3><br>
+            
+            <div class="container-tarea">
+                <div class="container-5">
+                    <p>
+                        La visualización responsable del cumplimiento de esta tarea es la primera. Esta corresponde a un <span class="bold-italic">bump chart</span> como 
+                        <span class="bold-italic">idiom</span> <span class="bold"> visual</span> el cual consiste en un tipo especial de grafico de líneas diseñado para explorar cambios de ranking 
+                        atreves del tiempo. 
+                    </p>
+                </div>
+
+                <div class="container-4"> 
+                    <h3>Marcas y Canales:</h3>
+                    <p>
+                        Cada lenguaje es representado por una línea <span class="bold">(marca unidimensional)</span> y contienen un color categórico como <span class="bold">canal de 
+                        identidad</span>  para poder ser diferenciadas entre si. Al tratarse de un total de 15 líneas (y por ende, 15 colores), 
+                        se hizo lo posible por encontrar colores que se pudieran diferenciar bien pero que a la vez, se vean bien en conjunto 
+                        de tal forma que la visualización sea atractiva. 
+                    </p>
+                    <p>
+                        Los circulos a lo largo de cada linea codifican el valor del <span class="italic">ranking</span> obtenido en la encuesta.
+                        <span class="bold">La posición a lo largo del eje X sirve para diferenciar entre los distintos años.</span> <br><br>
+                        <span class="bold">Se ocupó la posición con respecto al eje Y como canal de magnitud</span> para codificar el ranking.
+                    </p> 
+                </div>   
+                
+                <p class="message">
+                    🙋🏽‍♂️ A diferencia del <span class="italic">idiom</span> original, 
+                    el cual codifica los mismos elementos 10 a lo largo del tiempo, la visualización tiene un total de 15 elementos donde cada año 
+                    algunos se incorporan o salir del top 10. Para resolver el problema de como incorporar y sacar elementos en el <span class="bold">bump chart </span>se 
+                    optó por dejar un ultimo nivel (#11) con el nombre de “No ranking”. Esta solución fue adecuada pues de esta forma, aquellos 
+                    elementos sin ranking deben bajar y posicionarse por debajo del #10 por lo que la visualización es consistente con lo que se 
+                    busca representar.
+                </p>
+                <br>
+                
+                <div class="container-3"> 
+                    <h3>Interacciones:</h3>
+                    <p>
+                        La visualización también cuenta con <span class="bold"> interacción / manipulación </span> para permitirle al usuario observar de mejor manera la información 
+                        resumida y presentada:
+                    </p>
+        
+                    <ul>
+                        <li>
+                            Al colocar el cursor sobre una línea en particular, las otras bajan su opacidad, 
+                            permitiéndole al usuario ver de forma clara la evolución de la línea en cuestión.
+                             Además, el color de la leyenda correspondiente cambia de color (pasa de blanco, al mismo color que 
+                            la línea) para que el usuario pueda encontrar el nombre en la leyenda rapidamente.  
+                        </li>
+                        
+                        <li>
+                            También se pueden <span class="bold">seleccionar/deseleccionar </span> líneas apretando los nombres en la leyenda. De esta forma se le permite al usuario 
+                            filtrar y realizar comparaciones de forma visual entre lenguajes. 
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="container-5">
+                    <h3>Decisiones de diseño:</h3>
+                    <ul>
+                        <li>
+                            La decisión de diseño más importante resultó ser el <span class="italic">idiom</span> usado para esta tarea. En un principió se había optado por un grafico 
+                            de áreas sobrepuestas codificando el porcentaje de usuarios que afirmó haber usado un lenguaje en particular. El problema con 
+                            esta solución era que en casos donde los lenguajes estuvieran muy parejos, era difícil identificar visualmente cual era más 
+                            popular que el otro. 
+                        </li>
+    
+                        <li> 
+                            Para agilizar la selección de lenguajes se optó por incorporar un boton de "Mostrar todos" para volver rapidamente al estado inicial original de la visualización.
+                        </li>
+                    </ul>
+                    
+                </div>
+            </div>
+
+            <h3>Tarea 2: Identificar relaciones entre distintas tecnologías de programación.</h3><br>
+            <div class="container-tarea">
+                
+                <div class="container-5"> 
+                    <p> 
+                        La segunda visualización tiene la responsabilidad de cumplir con esta tarea. Esta visualización corresponde a un <span class="italic">idiom</span> <span class="bold">enlace-nodo</span>, 
+                        o más específicamente, una red sin pesos, sin etiquetas y no dirigida. Se apoya en posicionamiento dirigido por fuerzas donde 
+                        además se especifican las posiciones iniciales en el algoritmo para asegurarse que aquellas redes que no se encuentran conectadas 
+                        no queden sobrepuestas. 
+                    </p>
+    
+                    <p>
+                        Las tecnologías son representadas por nodos. Estos cuentan con colores categóricos como <span class="bold">canal de identidad</span>y llamativos que codifican el tipo de tecnología 
+                        (lenguaje, framework, plataforma o base de datos).  Estos colores son distintos y fácilmente diferenciables de los otros utilizados 
+                        en la primera visualización y buscan hacer la red más llamativa. 
+                    </p>
+                </div>
+
+                <div class="container-4">
+                    <h3> Agrupaciones y Organización perceptiva:</h3>
+                    <p>
+                        Esta visualización se apoya mucho en agrupaciones y la organización visual:
+                    </p>
+
+                    <ul>
+                        <li>
+                            Para facilitar más aun la diferenciación entre redes, se puede ubicar el cursor sobre un nodo y como consecuencia, todos los nodos conectados a este, 
+                            ya sea directa o indirectamente, crecerán, permitiendo una <span class="bold">agrupación por similaridad</span>. Además, los enlaces resaltarán un poco más 
+                            (menos opacidad) permitiendo mejores <span class="bold">agrupaciones por conectividad</span>. 
+                        </li>
+    
+                        <li>
+                            Al colocar el cursor sobre cada ítem de la leyenda de la visualización, los nodos que correspondan a esa categoría se harán más 
+                            grandes permitiendo otra <span class="bold">agrupación por similaridad</span>. 
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="container-5"> 
+                    <h3> Decisiones de diseño:</h3>
+
+                    <p> 
+                        El <span class="italic">idiom</span> tiene como desventaja la posibilidad de quedar con <span class="bold">redes indistinguibles</span>. Para solucionar este problema <span class="bold">se implementó
+                            la posibilidad de arrastrar nodos</span> (<span class="italic">drag</span>) de tal forma que el usuario pueda modificar las redes para visualizar mejor algunos
+                        enlaces, nodos y textos que podrían sobreponerse. 
+                    </p>
+
+                    <p> 
+                        Otra decisión realizada para solucionar el problema de las redes indistinguibles fue el especificar posiciones iniciales para cada grupo conectado de nodos.
+                        De esta forma nos aseguramos que inicialmente no se encuentran sobrepuestos y permitir así una <span class="bold">agrupación por proximidad</span>. 
+                    </p>
+    
+                    <p>
+                        Para evitar contar con mucho <span class="bold">visual clutter</span> tambien existe la posibilidad de <span class="bold">reducir el total de elementos visibles</span> mediante 
+                        un filtro: Al apretar un nodo, todo otro nodo y enlace que no este relacionado a este desaparecerá. Se puede apretar 
+                        “Mostrar todos” para volver al estado inicial de la red.
+                    </p>
+
+                </div>
+
+                <div class="row"> 
+
+                    <div class="column2" style="margin-left: 10%"> 
+                        <img src="redV2.png" alt="" style="width:200px;height:200px; align-content: center;"> 
+                    </div>
+
+                    <div class="column" style="justify-self: center;">
+                        <p>
+                            🙋🏽‍♂️ Cabe recalcar que es posible filtrar las redes y luego colocar el cursor sobre los ítems de las leyendas para visualizar 
+                            los nodos sin textos ni enlaces obteniendo un nuevo tipo de visualización. También se puede colocar el cursor sobre estos nuevos nodos de tal forma que 
+                            aparecen los enlaces entre estos llegando a un tercer tipo de visualización como en la imagen de la derecha.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <h3>Tarea 3: Descubrir posibles correlaciones entre el ranking de un lenguaje y sus relaciones con otras tencologías.</h3><br>
+            
+            <div class="container-tarea">
+                <div class="container-5">
+                    <p>
+                        Para esta tarea el usuario interactúa con ambas visualizaciones. Ya explicamos detalladamente cada una por lo que esta ultima sección será más breve.
+                    </p>
+
+                    <p>
+                        Al seleccionar un lenguaje en el <span class="italic">bump chart</span>, el nombre del nodo en la red que corresponde a este lenguaje cambiará 
+                        de color (de blanco al color asignado en el bump chart). Esta consistencia de colores atreves de las visualizaciones 
+                        permite un entendimiento fácil y rápido.
+                    </p>
+        
+                    <p>
+                        De esta forma podemos por ejemplo, notar como JavaScript probablemente se ha mantenido en el primer lugar del 
+                        ranking a lo largo de los últimos 6 años porque se relaciona con muchas tecnologías distintas mientras que Ruby 
+                        quizás solo pudo entrar al ranking un año porque suele relacionarse solo con el framework de Ruby on Rails. 
+                        También podemos ver como Typescript ha ido subiendo en el ranking durante los últimos años quizás porque se relaciona 
+                        mucho con JavaScript y con sus mismas tecnologías. 
+                    </p>
+
+                </div>
+
+            <div class="container-4">
+                <h3>Desiciones de Diseño</h3>
+                <p>
+                    Al llegar a esta tarea y buscar relacionar correctamente ambas visualizaciones se tuvieron que cambiar varios colores del <span class="italic"> buimp chart</span>
+                    porque se parecian mucho a los utilizados para los nodos. 
+                </p>
+
+                <p>
+                    Al momento de decidir como reflejar las selecciones de la primera visualización en la segunda se optó primero por agregarles
+                    bordes con los colores correspondientes a las lineas a cada nodo. Sin embargo, existian problemas de separabilidad al utilizar el mismo 
+                    canal de identidad de manera simultánea en el mismo item. Este mismo problema surguía al querer agrandar los nodos seleccioandos pues 
+                    la segunda visualización se apoya mucho en los tamaños de los nodos para agruparlos segun distintos atributos (tipo de herramienta o el hecho de estar conectados o no).
+                    Finalmente se encontró la solución de colorear solo los nombres.
+                </p>
+
+            </div>
+
+        </div>
+
+        </div>
+
+
+        <script src='colors.js'></script>
+        <script src='rankingchart.js'></script>
+        <script src='netgraph.js'></script>
+
+    </body>
+
+</html>
